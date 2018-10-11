@@ -3,11 +3,11 @@ import java.util.Scanner;
 
 public class DiceRolllerApp {
 
-	public static int randomRollDice(int rollDiceno)//method which takes no of sides from user
+	public static int generateRandomDieRoll(int sides)//method which takes no of sides from user
 	{
 		Random rand = new Random();
 		
-		int d= rand.nextInt(rollDiceno)+1;//random number generator add 1 so we dont get zero 
+		int d= rand.nextInt(sides)+1;//random number generator add 1 so we don't get zero 
 		return d;
 	
 		
@@ -27,10 +27,10 @@ public class DiceRolllerApp {
 		System.out.println("Roll "+s);
 
 		
-			x= randomRollDice(noOfSides);//method call for dice no 1 
+			x= generateRandomDieRoll(noOfSides);//method call for dice no 1 
 			 System.out.println(x);
 			 
-			e= randomRollDice(noOfSides);//method call for dice no 2 
+			e= generateRandomDieRoll(noOfSides);//method call for dice no 2 
 	         System.out.println(e);
 	         if(x==1 &&e==1)
 	         {
@@ -38,7 +38,11 @@ public class DiceRolllerApp {
 	         }
 	         else if (x==6 && e==6)
 	         {
-	        	 System.out.println("box cars");
+	        	 System.out.println("Box cars");
+	         }
+	         else if((x+e)==7)
+	         {
+	        	 System.out.println("Craps");
 	         }
 	         
 		System.out.println("Roll again? (y/n)");
